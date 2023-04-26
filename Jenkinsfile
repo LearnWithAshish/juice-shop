@@ -8,8 +8,8 @@ pipeline {
 }
 stage('Run Gitleaks') {
   steps {
-    dir('git clone https://github.com/LearnWithAshish/juice-shop.git') {
-      sh 'gitleaks detect -f json -r /home/ubuntu/juice-shop -v'
+    dir('/home/ubuntu/juice-shop') {
+      sh 'gitleaks detect -f json -r /home/ubuntu/juice-shop -v --report=/home/ubuntu/gitleaks/gitleaks.json'
     }
   }
 }

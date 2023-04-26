@@ -1,18 +1,14 @@
 pipeline {
     agent any
-    stages {
-    stage('Install Gitleaks') {
-  steps {
-    sh 'curl -LO https://github.com/zricethezav/gitleaks/releases/download/v7.6.0/gitleaks-linux-amd64 && chmod +x gitleaks-linux-amd64 && sudo mv gitleaks-linux-amd64 /usr/local/bin/gitleaks && gitleaks --version'
-  }
-}
-stage('Run Gitleaks') {
-  steps {
-    dir('https://github.com/LearnWithAshish/juice-shop.git') {
-      sh 'gitleaks detect -f json -r /home/ubuntu/juice-shop -v'
+    stage('Checkout') {
+        // Check out your Git repository
+        git 'https://github.com/LearnWithAshish/juice-shop.git'
     }
-  }
-}
 
-}
+    stage('Gitleaks') {
+        // Run Gitleaks on the repository
+        sh 'gitleaks detect -f json -r /home/ubuntu/juice-shop -v'
+    }
+
+    // Add more stages as needed
 }

@@ -8,7 +8,7 @@ pipeline {
 }
 stage('Run Gitleaks') {
   steps {
-    dir('/home/ubuntu/juice-shop') {
+    dir('https://github.com/LearnWithAshish/juice-shop.git') {
       sh 'gitleaks detect -f json -r /home/ubuntu/juice-shop -v'
     }
   }

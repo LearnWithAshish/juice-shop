@@ -9,7 +9,7 @@ pipeline {
 stage('Run Gitleaks') {
   steps {
     dir('/home/ubuntu/juice-shop') {
-      sh 'gitleaks detect -f json -r /home/ubuntu/juice-shop -v --report=/home/ubuntu/gitleaks/gitleaks.json'
+      sh 'gitleaks detect -f json -r /home/ubuntu/juice-shop -v'
     }
   }
 }

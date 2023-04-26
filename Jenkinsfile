@@ -1,22 +1,12 @@
 pipeline {
   agent any
-  tools { 
-    maven 'Maven'
-  }
   stages {
-    stage('Initialize') {
-      steps {
-        sh '''
-          echo "PATH = ${PATH}"
-        echo "M2_HOME" = ${M2_HOME}"
-        '''
+    stage('Check-git-scerets')
+    steps(
+      sh 'git clone https://github.com/LearnWithAshish/juice-shop.git'
+      sh 'gitleaks detect -f json -r /home/ubuntu/juice-shop -v --report=/home/ubuntu/gitleaks/gitleaks.json'
+      
           }
     }
-    stage('Build') {
-      steps {
-        sh 'mvn clean package'
       }
     }
-    
-  }
-}

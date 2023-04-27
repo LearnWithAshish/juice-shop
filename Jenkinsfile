@@ -20,7 +20,7 @@ pipeline {
   }
   stage('Dependency-Check') {
   steps {
-    dir('/home/ubuntu/juice-shop') {
+    dir('https://github.com/LearnWithAshish/juice-shop.git') {
       sh '''#!/bin/bash
       cd dependency-check/bin/
           sudo ./dependency-check.sh --project dep-check-pipeline --scan /home/ubuntu/juice-shop  --out /home/ubuntu/gitleaks/dep-check.html

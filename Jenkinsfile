@@ -17,6 +17,7 @@ pipeline {
          '''
         }
     }
+  }
   stage('Dependency-Check') {
   steps {
     dir('/home/ubuntu/juice-shop') {
@@ -29,4 +30,4 @@ pipeline {
           }
   }
 }
-}
+

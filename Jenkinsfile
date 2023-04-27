@@ -20,3 +20,12 @@ stage('Run Gitleaks') {
   }
 }
 }
+stage('Dependency-Check') {
+  steps {
+    dir('https://github.com/LearnWithAshish/juice-shop.git') {
+      sh '''#!/bin/bash
+      cd dependency-check/bin/
+          ./dependency-check.sh --project dep-check-pipeline --scan https://github.com/LearnWithAshish/juice-shop.git  --out /home/ubuntu/gitleaks/dep-check.html
+          }
+          }
+          }

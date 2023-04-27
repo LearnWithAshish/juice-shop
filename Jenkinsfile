@@ -30,7 +30,7 @@ pipeline {
         sh 'curl -LO https://github.com/jeremylong/DependencyCheck/releases/download/v8.2.1/dependency-check-8.2.1-release.zip'
 
         // Unzip the Dependency Check CLI
-        sh 'rm dependency-check* || true'    
+        sh 'rm -rf dependency-check* || true'    
         sh 'unzip -qq dependency-check-8.2.1-release.zip'
 
         // Run Dependency Check on the repository

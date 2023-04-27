@@ -17,9 +17,6 @@ stage('Run Gitleaks') {
          '''
         }
     }
-  }
-}
-}
 stage('Dependency-Check') {
   steps {
     dir('/home/ubuntu/juice-shop') {
@@ -30,3 +27,6 @@ stage('Dependency-Check') {
           }
           }
           }
+  }
+}
+}

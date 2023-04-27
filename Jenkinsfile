@@ -8,7 +8,7 @@ pipeline {
     '''
   }
 }
-stage('Run Gitleaks') {
+  stage('Run Gitleaks') {
   steps {
     dir('https://github.com/LearnWithAshish/juice-shop.git') {
       sh '''#!/bin/bash
@@ -17,7 +17,7 @@ stage('Run Gitleaks') {
          '''
         }
     }
-stage('Dependency-Check') {
+  stage('Dependency-Check') {
   steps {
     dir('/home/ubuntu/juice-shop') {
       sh '''#!/bin/bash

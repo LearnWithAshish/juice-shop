@@ -23,7 +23,7 @@ pipeline {
     dir('https://github.com/LearnWithAshish/juice-shop.git') {
       sh '''#!/bin/bash
       cd dependency-check/bin/
-          sudo ./dependency-check.sh --project dep-check-pipeline --scan https://github.com/LearnWithAshish/juice-shop.git  --out /home/ubuntu/gitleaks/dep-check.html
+          ./dependency-check.sh --project dep-check-pipeline --scan https://github.com/LearnWithAshish/juice-shop.git  --out /home/ubuntu/gitleaks/dep-check.html
            '''
           }
           }

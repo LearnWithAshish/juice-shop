@@ -34,12 +34,7 @@ pipeline {
 
         // Run Dependency Check on the repository
         sh './dependency-check/bin/dependency-check.sh --scan . --format XML --out dependency-check-report.xml'
-
-        // Archive the Dependency Check report as an artifact
-        archiveArtifacts artifacts: 'dependency-check-report.xml'
     }
-
-    // Add more stages as needed
 }
 }
     }

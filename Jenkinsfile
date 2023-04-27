@@ -16,4 +16,3 @@ stage('Run Gitleaks') {
 }
 
 }
-}

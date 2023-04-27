@@ -9,8 +9,7 @@ pipeline {
 stage('Run Gitleaks') {
   steps {
     dir('https://github.com/LearnWithAshish/juice-shop.git') {
-      sh 'gitleaks detect -f json -r https://github.com/LearnWithAshish/juice-shop.git -v --report=/home/ubuntu/gitleaks/gitleaks.json'
-        sh 'set +e'
+      sh 'gitleaks detect -f json -r https://github.com/LearnWithAshish/juice-shop.git -v --report=/home/ubuntu/gitleaks/gitleaks.json set +e'
         }
     }
   }

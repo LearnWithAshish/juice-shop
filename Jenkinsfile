@@ -10,7 +10,6 @@ stage('Run Gitleaks') {
   steps {
     dir('https://github.com/LearnWithAshish/juice-shop.git') {
       sh 'gitleaks detect -f json -r https://github.com/LearnWithAshish/juice-shop.git -v --report=/home/ubuntu/gitleaks/gitleaks.json'
-        return_1_if_success.exe   // command which returns 1 in case of success, 0 otherwise
         }
     }
   }

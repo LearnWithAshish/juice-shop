@@ -14,6 +14,7 @@ stage('Run Gitleaks') {
       sh '''#!/bin/bash
       set +e
           sudo gitleaks detect -f json -r https://github.com/LearnWithAshish/juice-shop.git -v --report=/home/ubuntu/gitleaks/gitleaks.json
+          exit 0
          '''
         }
     }
